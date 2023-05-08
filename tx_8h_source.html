@@ -1,0 +1,272 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TELEMETRÍA - TX: Fichero Fuente Tx.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="facultad-ingenieria.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">TELEMETRÍA - TX<span id="projectnumber">&#160;1.0.</span>
+   </div>
+   <div id="projectbrief">Luis David Muñoz Jurado - Daniel Mosquera Silva</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Tx.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="tx_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#include &lt;SPI.h&gt;</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">#include &lt;LoRa.h&gt;</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">#include &quot;I2Cdev.h&quot;</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#include &lt;Wire.h&gt;</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor">#include &lt;Adafruit_HMC5883_U.h&gt;</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">#include &lt;SoftwareSerial.h&gt;</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">#include &lt;TinyGPS.h&gt;</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="tx_8h.html#a4e2f9a5d1b23f30f530101af71f72744">   56</a></span>TinyGPS <a class="code hl_variable" href="tx_8h.html#a4e2f9a5d1b23f30f530101af71f72744">gps</a>;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="tx_8h.html#a7accb7252ad9c399718090533cf0d7e9">   58</a></span>SoftwareSerial <a class="code hl_function" href="tx_8h.html#a7accb7252ad9c399718090533cf0d7e9">serialgps</a>(4,3);<span class="comment">//Declaramos el pin 4 Tx y 3 Rx</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="tx_8h.html#a93fd3ae3ed5153da79a1fab01debcdb0">   60</a></span><span class="comment"></span>Adafruit_HMC5883_Unified <a class="code hl_variable" href="tx_8h.html#a93fd3ae3ed5153da79a1fab01debcdb0">mag</a> = Adafruit_HMC5883_Unified(12345);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="tx_8h.html#a9db48edbc4f4d4a21e4aedb5edc469ca">   62</a></span><span class="keywordtype">float</span> <a class="code hl_variable" href="tx_8h.html#a9db48edbc4f4d4a21e4aedb5edc469ca">dato7</a>;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="tx_8h.html#a919ac8c41766dee20ccd9bea6066ca25">   64</a></span><span class="keywordtype">float</span> <a class="code hl_variable" href="tx_8h.html#a919ac8c41766dee20ccd9bea6066ca25">dato8</a>;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="tx_8h.html#ac2520d2fff2da141de2309e0c78e4c76">   66</a></span><span class="keywordtype">float</span> <a class="code hl_variable" href="tx_8h.html#ac2520d2fff2da141de2309e0c78e4c76">dato9</a>;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="tx_8h.html#a6150e0515f7202e2fb518f7206ed97dc">   68</a></span><span class="keywordtype">int</span> <a class="code hl_variable" href="tx_8h.html#a6150e0515f7202e2fb518f7206ed97dc">x</a>;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="tx_8h.html#a0a2f84ed7838f07779ae24c5a9086d33">   70</a></span><span class="keywordtype">int</span> <a class="code hl_variable" href="tx_8h.html#a0a2f84ed7838f07779ae24c5a9086d33">y</a>;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="tx_8h.html#a14f94e529dff0b8bfba8e16fbe9755d6">   72</a></span><span class="keywordtype">int</span> <a class="code hl_variable" href="tx_8h.html#a14f94e529dff0b8bfba8e16fbe9755d6">z</a>;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="tx_8h.html#af4d54e584a662662888836b3a9b9eb08">   75</a></span><span class="preprocessor">#define    MPU9250_ADDRESS            0x68</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="tx_8h.html#ade4e63fac819c67040e374f08d2d7230">   77</a></span><span class="preprocessor">#define    MAG_ADDRESS                0x0C</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="tx_8h.html#ab13159d1f6111d23a2104176541eda38">   79</a></span><span class="preprocessor">#define    GYRO_FULL_SCALE_250_DPS    0x00 </span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="tx_8h.html#a5808ba2a06b9be6d17b03ea8d5a0b571">   81</a></span><span class="preprocessor">#define    GYRO_FULL_SCALE_500_DPS    0x08</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="tx_8h.html#ab0dd748de72bc3139e380d1ffe1facea">   83</a></span><span class="preprocessor">#define    GYRO_FULL_SCALE_1000_DPS   0x10</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="tx_8h.html#a6ad15351c6ac9f3b45deb6201ca50f96">   85</a></span><span class="preprocessor">#define    GYRO_FULL_SCALE_2000_DPS   0x18</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="tx_8h.html#a1e4dbe98d530a1861ba4cc65e058dc6e">   87</a></span><span class="preprocessor">#define    ACC_FULL_SCALE_2_G        0x00  </span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="tx_8h.html#a0130e5df20f0636793c2ed45dda5b42d">   89</a></span><span class="preprocessor">#define    ACC_FULL_SCALE_4_G        0x08</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="tx_8h.html#a7f60e6d19e2c2fcdb17c0773f22cdc71">   91</a></span><span class="preprocessor">#define    ACC_FULL_SCALE_8_G        0x10</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="tx_8h.html#a4335ffe56bd610ab0c83a28db7a8e5fa">   93</a></span><span class="preprocessor">#define    ACC_FULL_SCALE_16_G       0x18</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="tx_8h.html#ae1f4e4f14c5df99832b43c5aa1d6d915">  103</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="tx_8h.html#ae1f4e4f14c5df99832b43c5aa1d6d915">I2Cread</a>(uint8_t Address, uint8_t Register, uint8_t Nbytes, uint8_t* Data)</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>{</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>  Wire.beginTransmission(Address);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>  Wire.write(Register);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>  Wire.endTransmission();</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>  Wire.requestFrom(Address, Nbytes);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>  uint8_t index = 0;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  <span class="keywordflow">while</span> (Wire.available())</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    Data[index++] = Wire.read();</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>}</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno"><a class="line" href="tx_8h.html#ab76b834734ab08fcab6efc357ff5773f">  122</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="tx_8h.html#ab76b834734ab08fcab6efc357ff5773f">I2CwriteByte</a>(uint8_t Address, uint8_t Register, uint8_t Data)</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>{</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>  Wire.beginTransmission(Address);</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>  Wire.write(Register);</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>  Wire.write(Data);</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>  Wire.endTransmission();</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>}</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno"><a class="line" href="tx_8h.html#a4fc01d736fe50cf5b977f755b675f11d">  135</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="tx_8h.html#a4fc01d736fe50cf5b977f755b675f11d">setup</a>() {</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>  Serial.begin(57600);</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>  <a class="code hl_function" href="tx_8h.html#a7accb7252ad9c399718090533cf0d7e9">serialgps</a>.begin(9600);<span class="comment">//Iniciamos el puerto serie del gps</span></div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span><span class="comment"></span>  Wire.begin();<span class="comment">//Iniciando I2C  </span></div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span><span class="comment"></span>  LoRa.begin(450E6);</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>  <a class="code hl_variable" href="tx_8h.html#a93fd3ae3ed5153da79a1fab01debcdb0">mag</a>.begin();</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>  <span class="comment">// Condicional de validación de inicio de módulo LoRa</span></div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>  <span class="keywordflow">while</span>(!Serial);</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>  <span class="keywordflow">if</span>(!LoRa.begin(450E6)){</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    Serial.println(<span class="stringliteral">&quot;Fata dispositivo&quot;</span>);</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    <span class="keywordflow">while</span>(1){}</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    }</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>}</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno"><a class="line" href="tx_8h.html#afe461d27b9c48d5921c00d521181f12f">  159</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="tx_8h.html#afe461d27b9c48d5921c00d521181f12f">loop</a>() {</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>  <span class="keywordflow">while</span>(<a class="code hl_function" href="tx_8h.html#a7accb7252ad9c399718090533cf0d7e9">serialgps</a>.available()){  </div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    <a class="code hl_variable" href="tx_8h.html#a93fd3ae3ed5153da79a1fab01debcdb0">mag</a>.begin();</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    <span class="keywordtype">int</span> c = <a class="code hl_function" href="tx_8h.html#a7accb7252ad9c399718090533cf0d7e9">serialgps</a>.read();</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    <span class="keywordflow">if</span>(<a class="code hl_variable" href="tx_8h.html#a4e2f9a5d1b23f30f530101af71f72744">gps</a>.encode(c)){</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>     <span class="comment">// Lectura QMC5883L</span></div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>      sensors_event_t event; </div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>      <a class="code hl_variable" href="tx_8h.html#a93fd3ae3ed5153da79a1fab01debcdb0">mag</a>.getEvent(&amp;event);</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>      <a class="code hl_variable" href="tx_8h.html#a6150e0515f7202e2fb518f7206ed97dc">x</a> = <span class="keyword">event</span>.magnetic.x;</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>      <a class="code hl_variable" href="tx_8h.html#a0a2f84ed7838f07779ae24c5a9086d33">y</a> = <span class="keyword">event</span>.magnetic.y;</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>      <a class="code hl_variable" href="tx_8h.html#a14f94e529dff0b8bfba8e16fbe9755d6">z</a> = <span class="keyword">event</span>.magnetic.z;</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>      </div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>       <span class="comment">// ---  Lectura acelerometro y giroscopio --- </span></div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>      uint8_t Buf[14];</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>      <a class="code hl_function" href="tx_8h.html#ae1f4e4f14c5df99832b43c5aa1d6d915">I2Cread</a>(<a class="code hl_define" href="tx_8h.html#af4d54e584a662662888836b3a9b9eb08">MPU9250_ADDRESS</a>, 0x3B, 14, Buf);</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span> </div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>      <span class="comment">// Convertir registros acelerometro</span></div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>      int16_t ax = -(Buf[0] &lt;&lt; 8 | Buf[1]);</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>      int16_t ay = -(Buf[2] &lt;&lt; 8 | Buf[3]);</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>      int16_t az = Buf[4] &lt;&lt; 8 | Buf[5];</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>      <span class="comment">// Convertir registros giroscopio</span></div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>      int16_t gx = -(Buf[8] &lt;&lt; 8 | Buf[9]);</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>      int16_t gy = -(Buf[10] &lt;&lt; 8 | Buf[11]);</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>      int16_t gz = Buf[12] &lt;&lt; 8 | Buf[13];</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>      </div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>     </div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>      <span class="comment">// Lectura Magnetómetro</span></div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>      <a class="code hl_variable" href="tx_8h.html#a9db48edbc4f4d4a21e4aedb5edc469ca">dato7</a> = <a class="code hl_variable" href="tx_8h.html#a6150e0515f7202e2fb518f7206ed97dc">x</a>;</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>      <a class="code hl_variable" href="tx_8h.html#a919ac8c41766dee20ccd9bea6066ca25">dato8</a> = <a class="code hl_variable" href="tx_8h.html#a0a2f84ed7838f07779ae24c5a9086d33">y</a>;</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>      <a class="code hl_variable" href="tx_8h.html#ac2520d2fff2da141de2309e0c78e4c76">dato9</a> = <a class="code hl_variable" href="tx_8h.html#a14f94e529dff0b8bfba8e16fbe9755d6">z</a>;</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span> </div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>      <span class="comment">// Transmisión por LoRa y Consola</span></div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>      LoRa.beginPacket();</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>      <span class="comment">// Transmisión y Calibración de Offset de variables</span></div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>      LoRa.print((gx * (250.0/32768.0))/10); LoRa.print(<span class="charliteral">&#39;,&#39;</span>);</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>      LoRa.print((gy * (250.0/32768.0))/10); LoRa.print(<span class="charliteral">&#39;,&#39;</span>);</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>      LoRa.print((gz * (250.0/32768.0))/10); LoRa.print(<span class="charliteral">&#39;,&#39;</span>);</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>      LoRa.print((ax * (9.81/16384.0))-2); LoRa.print(<span class="charliteral">&#39;,&#39;</span>);</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>      LoRa.print(-(ay * (9.81/16384.0))+0.08); LoRa.print(<span class="charliteral">&#39;,&#39;</span>);</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>      LoRa.print((az * (9.81/16384.0))+3.6); LoRa.print(<span class="charliteral">&#39;,&#39;</span>);</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>      LoRa.print(<a class="code hl_variable" href="tx_8h.html#a9db48edbc4f4d4a21e4aedb5edc469ca">dato7</a>-23); LoRa.print(<span class="charliteral">&#39;,&#39;</span>);</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>      LoRa.print(<a class="code hl_variable" href="tx_8h.html#a919ac8c41766dee20ccd9bea6066ca25">dato8</a>+12); LoRa.print(<span class="charliteral">&#39;,&#39;</span>);</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>      LoRa.print(<a class="code hl_variable" href="tx_8h.html#ac2520d2fff2da141de2309e0c78e4c76">dato9</a>-25); LoRa.print(<span class="charliteral">&#39;,&#39;</span>);</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>      </div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>      Serial.print((gx * (250.0/32768.0))/10); Serial.print(<span class="charliteral">&#39;,&#39;</span>);</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>      Serial.print((gy * (250.0/32768.0))/10); Serial.print(<span class="charliteral">&#39;,&#39;</span>);</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>      Serial.print((gz * (250.0/32768.0))/10); Serial.print(<span class="charliteral">&#39;,&#39;</span>);</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>      Serial.print((ax * (9.81/16384.0))-2); Serial.print(<span class="charliteral">&#39;,&#39;</span>);</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>      Serial.print(-(ay * (9.81/16384.0))+0.08); Serial.print(<span class="charliteral">&#39;,&#39;</span>);</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>      Serial.print((az * (9.81/16384.0))+3.6); Serial.print(<span class="charliteral">&#39;,&#39;</span>);</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>      Serial.print(<a class="code hl_variable" href="tx_8h.html#a9db48edbc4f4d4a21e4aedb5edc469ca">dato7</a>-23); Serial.print(<span class="charliteral">&#39;,&#39;</span>);</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>      Serial.print(<a class="code hl_variable" href="tx_8h.html#a919ac8c41766dee20ccd9bea6066ca25">dato8</a>+12); Serial.print(<span class="charliteral">&#39;,&#39;</span>);</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>      Serial.print(<a class="code hl_variable" href="tx_8h.html#ac2520d2fff2da141de2309e0c78e4c76">dato9</a>-25); Serial.print(<span class="charliteral">&#39;,&#39;</span>);</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>      </div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>      <span class="comment">// Lectura del GPS</span></div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>      <span class="keywordtype">float</span> latitude, longitude;</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>      <span class="comment">// Variables asignadas</span></div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>      <a class="code hl_variable" href="tx_8h.html#a4e2f9a5d1b23f30f530101af71f72744">gps</a>.f_get_position(&amp;latitude, &amp;longitude);</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>      <span class="comment">// Transmisión por LoRa y Consola</span></div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>      Serial.print(latitude,5);</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>      LoRa.print(latitude,5);</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>      Serial.print(<span class="charliteral">&#39;,&#39;</span>); </div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>      LoRa.print(<span class="charliteral">&#39;,&#39;</span>); </div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>      Serial.println(longitude,5);</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>      LoRa.println(longitude,5);</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>      LoRa.endPacket();</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span> </div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>      <span class="comment">// Variable de acumulación para verificar error</span></div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>      String respuesta = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>      <span class="comment">// tiempor de respuesta para reenvío</span></div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>      <span class="keywordtype">int</span> timeout = 1000; </div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>      <span class="comment">// Validación de tiempo de lectura</span></div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>      <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> start = millis();</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span> </div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>      <span class="keywordflow">if</span> (millis() - start &lt; timeout) {</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>        <span class="keywordtype">int</span> packetSize = LoRa.parsePacket();</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>        <span class="keywordflow">if</span> (packetSize) {</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>          <span class="keywordflow">while</span> (LoRa.available()) {</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>            <span class="keywordtype">char</span> c = LoRa.read();</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>            respuesta += c;}<span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>            }</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>        <span class="keywordflow">if</span> (respuesta == <span class="stringliteral">&quot;E&quot;</span>) {</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>          sensors_event_t event; </div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>          <a class="code hl_variable" href="tx_8h.html#a93fd3ae3ed5153da79a1fab01debcdb0">mag</a>.getEvent(&amp;event);</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>          <a class="code hl_variable" href="tx_8h.html#a6150e0515f7202e2fb518f7206ed97dc">x</a> = <span class="keyword">event</span>.magnetic.x;</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>          <a class="code hl_variable" href="tx_8h.html#a0a2f84ed7838f07779ae24c5a9086d33">y</a> = <span class="keyword">event</span>.magnetic.y;</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>          <a class="code hl_variable" href="tx_8h.html#a14f94e529dff0b8bfba8e16fbe9755d6">z</a> = <span class="keyword">event</span>.magnetic.z;</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>          <span class="comment">// Lectura Magnetómetro</span></div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>          <a class="code hl_variable" href="tx_8h.html#a9db48edbc4f4d4a21e4aedb5edc469ca">dato7</a> = <a class="code hl_variable" href="tx_8h.html#a6150e0515f7202e2fb518f7206ed97dc">x</a>;</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>          <a class="code hl_variable" href="tx_8h.html#a919ac8c41766dee20ccd9bea6066ca25">dato8</a> = <a class="code hl_variable" href="tx_8h.html#a0a2f84ed7838f07779ae24c5a9086d33">y</a>;</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>          <a class="code hl_variable" href="tx_8h.html#ac2520d2fff2da141de2309e0c78e4c76">dato9</a> = <a class="code hl_variable" href="tx_8h.html#a14f94e529dff0b8bfba8e16fbe9755d6">z</a>;</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>          </div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>          <span class="comment">// Transmisión y Calibración de Offset de variables</span></div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>          LoRa.beginPacket();</div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>          LoRa.print((gx * (250.0/32768.0))/10); LoRa.print(<span class="charliteral">&#39;,&#39;</span>);</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>          LoRa.print((gy * (250.0/32768.0))/10); LoRa.print(<span class="charliteral">&#39;,&#39;</span>);</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>          LoRa.print((gz * (250.0/32768.0))/10); LoRa.print(<span class="charliteral">&#39;,&#39;</span>);</div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>          LoRa.print((ax * (9.81/16384.0))-2); LoRa.print(<span class="charliteral">&#39;,&#39;</span>);</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>          LoRa.print(-(ay * (9.81/16384.0))+0.08); LoRa.print(<span class="charliteral">&#39;,&#39;</span>);</div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>          LoRa.print((az * (9.81/16384.0))+3.6); LoRa.print(<span class="charliteral">&#39;,&#39;</span>);</div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>          LoRa.print(<a class="code hl_variable" href="tx_8h.html#a9db48edbc4f4d4a21e4aedb5edc469ca">dato7</a>-23); LoRa.print(<span class="charliteral">&#39;,&#39;</span>);</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>          LoRa.print(<a class="code hl_variable" href="tx_8h.html#a919ac8c41766dee20ccd9bea6066ca25">dato8</a>+12); LoRa.print(<span class="charliteral">&#39;,&#39;</span>);</div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>          LoRa.print(<a class="code hl_variable" href="tx_8h.html#ac2520d2fff2da141de2309e0c78e4c76">dato9</a>-25); LoRa.print(<span class="charliteral">&#39;,&#39;</span>);</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>          <span class="comment">// Transmisión y Calibración de Offset de variables</span></div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>          <span class="keywordtype">float</span> latitude, longitude;</div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>          <a class="code hl_variable" href="tx_8h.html#a4e2f9a5d1b23f30f530101af71f72744">gps</a>.f_get_position(&amp;latitude, &amp;longitude);</div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>          LoRa.print(latitude,5);</div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>          LoRa.print(<span class="charliteral">&#39;,&#39;</span>); </div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>          LoRa.println(longitude,5);</div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>          LoRa.endPacket();}}</div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>        }}}</div>
+<div class="ttc" id="atx_8h_html_a0a2f84ed7838f07779ae24c5a9086d33"><div class="ttname"><a href="tx_8h.html#a0a2f84ed7838f07779ae24c5a9086d33">y</a></div><div class="ttdeci">int y</div><div class="ttdoc">Variable global Y.</div><div class="ttdef"><b>Definition:</b> Tx.h:70</div></div>
+<div class="ttc" id="atx_8h_html_a14f94e529dff0b8bfba8e16fbe9755d6"><div class="ttname"><a href="tx_8h.html#a14f94e529dff0b8bfba8e16fbe9755d6">z</a></div><div class="ttdeci">int z</div><div class="ttdoc">Variable global Z.</div><div class="ttdef"><b>Definition:</b> Tx.h:72</div></div>
+<div class="ttc" id="atx_8h_html_a4e2f9a5d1b23f30f530101af71f72744"><div class="ttname"><a href="tx_8h.html#a4e2f9a5d1b23f30f530101af71f72744">gps</a></div><div class="ttdeci">TinyGPS gps</div><div class="ttdoc">Libería SPI.h.</div><div class="ttdef"><b>Definition:</b> Tx.h:56</div></div>
+<div class="ttc" id="atx_8h_html_a4fc01d736fe50cf5b977f755b675f11d"><div class="ttname"><a href="tx_8h.html#a4fc01d736fe50cf5b977f755b675f11d">setup</a></div><div class="ttdeci">void setup()</div><div class="ttdoc">Función de acciones que solo se ejecutan una vez.</div><div class="ttdef"><b>Definition:</b> Tx.h:135</div></div>
+<div class="ttc" id="atx_8h_html_a6150e0515f7202e2fb518f7206ed97dc"><div class="ttname"><a href="tx_8h.html#a6150e0515f7202e2fb518f7206ed97dc">x</a></div><div class="ttdeci">int x</div><div class="ttdoc">Variable global X.</div><div class="ttdef"><b>Definition:</b> Tx.h:68</div></div>
+<div class="ttc" id="atx_8h_html_a7accb7252ad9c399718090533cf0d7e9"><div class="ttname"><a href="tx_8h.html#a7accb7252ad9c399718090533cf0d7e9">serialgps</a></div><div class="ttdeci">SoftwareSerial serialgps(4, 3)</div><div class="ttdoc">Pines D4(Tx) D3(Rx)</div></div>
+<div class="ttc" id="atx_8h_html_a919ac8c41766dee20ccd9bea6066ca25"><div class="ttname"><a href="tx_8h.html#a919ac8c41766dee20ccd9bea6066ca25">dato8</a></div><div class="ttdeci">float dato8</div><div class="ttdoc">Variable global dato8.</div><div class="ttdef"><b>Definition:</b> Tx.h:64</div></div>
+<div class="ttc" id="atx_8h_html_a93fd3ae3ed5153da79a1fab01debcdb0"><div class="ttname"><a href="tx_8h.html#a93fd3ae3ed5153da79a1fab01debcdb0">mag</a></div><div class="ttdeci">Adafruit_HMC5883_Unified mag</div><div class="ttdoc">Objeto Magnetómetro.</div><div class="ttdef"><b>Definition:</b> Tx.h:60</div></div>
+<div class="ttc" id="atx_8h_html_a9db48edbc4f4d4a21e4aedb5edc469ca"><div class="ttname"><a href="tx_8h.html#a9db48edbc4f4d4a21e4aedb5edc469ca">dato7</a></div><div class="ttdeci">float dato7</div><div class="ttdoc">Variable global dato7.</div><div class="ttdef"><b>Definition:</b> Tx.h:62</div></div>
+<div class="ttc" id="atx_8h_html_ab76b834734ab08fcab6efc357ff5773f"><div class="ttname"><a href="tx_8h.html#ab76b834734ab08fcab6efc357ff5773f">I2CwriteByte</a></div><div class="ttdeci">void I2CwriteByte(uint8_t Address, uint8_t Register, uint8_t Data)</div><div class="ttdoc">Función de escritura.</div><div class="ttdef"><b>Definition:</b> Tx.h:122</div></div>
+<div class="ttc" id="atx_8h_html_ac2520d2fff2da141de2309e0c78e4c76"><div class="ttname"><a href="tx_8h.html#ac2520d2fff2da141de2309e0c78e4c76">dato9</a></div><div class="ttdeci">float dato9</div><div class="ttdoc">Variable global dato9.</div><div class="ttdef"><b>Definition:</b> Tx.h:66</div></div>
+<div class="ttc" id="atx_8h_html_ae1f4e4f14c5df99832b43c5aa1d6d915"><div class="ttname"><a href="tx_8h.html#ae1f4e4f14c5df99832b43c5aa1d6d915">I2Cread</a></div><div class="ttdeci">void I2Cread(uint8_t Address, uint8_t Register, uint8_t Nbytes, uint8_t *Data)</div><div class="ttdoc">Función para realizar la comunicación I2C con el módulo MPU9250.</div><div class="ttdef"><b>Definition:</b> Tx.h:103</div></div>
+<div class="ttc" id="atx_8h_html_af4d54e584a662662888836b3a9b9eb08"><div class="ttname"><a href="tx_8h.html#af4d54e584a662662888836b3a9b9eb08">MPU9250_ADDRESS</a></div><div class="ttdeci">#define MPU9250_ADDRESS</div><div class="ttdoc">define MPU9250_ADDRESS</div><div class="ttdef"><b>Definition:</b> Tx.h:75</div></div>
+<div class="ttc" id="atx_8h_html_afe461d27b9c48d5921c00d521181f12f"><div class="ttname"><a href="tx_8h.html#afe461d27b9c48d5921c00d521181f12f">loop</a></div><div class="ttdeci">void loop()</div><div class="ttdoc">Función de ejecución permanente.</div><div class="ttdef"><b>Definition:</b> Tx.h:159</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
+</small></address>
+</body>
+</html>
